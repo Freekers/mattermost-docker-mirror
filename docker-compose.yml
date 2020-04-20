@@ -20,7 +20,8 @@ services:
     #  - AWS_REGION=us-east-1
 
   app:
-    build: app
+    build:
+      context: app
       # uncomment following lines for team edition or change UID/GID
       # args:
       #   - edition=team
@@ -58,6 +59,3 @@ services:
       # This directory must have cert files if you want to enable SSL
       - ./volumes/web/cert:/cert:ro
       - /etc/localtime:/etc/localtime:ro
-    # Uncomment for SSL
-    # environment:
-    #  - MATTERMOST_ENABLE_SSL=true
